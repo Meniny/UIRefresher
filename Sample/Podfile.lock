@@ -1,0 +1,16 @@
+PODS:
+  - UIRefresher (1.0.0)
+
+DEPENDENCIES:
+  - UIRefresher (from `../`)
+
+EXTERNAL SOURCES:
+  UIRefresher:
+    :path: ../
+
+SPEC CHECKSUMS:
+  UIRefresher: 4ecfdf00fed129e4deae8ea85c5c47c57b274be6
+
+PODFILE CHECKSUM: b7147a08e6535ef74e37388bfc10e3e7dcc2e924
+
+COCOAPODS: 1.4.0
