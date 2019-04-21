@@ -50,7 +50,7 @@ public extension UIScrollView {
     /// - Parameters:
     ///   - height: refresh view height and also the trigger requirement, default is 60
     ///   - action: refresh action
-    public func setIndicatorHeader(height: CGFloat = 60,
+    func setIndicatorHeader(height: CGFloat = 60,
                                        action: @escaping () -> Void) {
         header = IndicatorView(isHeader: true, height: height, action: action)
     }
@@ -61,7 +61,7 @@ public extension UIScrollView {
     ///   - refreshText: text display for different states
     ///   - height: refresh view height and also the trigger requirement, default is 60
     ///   - action: refresh action
-    public func setTextHeader(refreshText: RefreshText = headerText,
+    func setTextHeader(refreshText: RefreshText = headerText,
                                   height: CGFloat = 60,
                                   action: @escaping () -> Void) {
         header = TextView(isHeader: true, refreshText: refreshText, height: height, action: action)
@@ -74,7 +74,7 @@ public extension UIScrollView {
     ///   - flexible: whether the GIF is displayed with full screen width
     ///   - height: refresh view height and also the trigger requirement
     ///   - action: refresh action
-    public func setGIFHeader(data: Data,
+    func setGIFHeader(data: Data,
                                  flexible: Bool = false,
                                  height: CGFloat = 60,
                                  action: @escaping () -> Void) {
@@ -88,7 +88,7 @@ public extension UIScrollView {
     ///   - refreshText: text display for different states
     ///   - height: refresh view height and also the trigger requirement, default is 60
     ///   - action: refresh action
-    public func setGIFTextHeader(data: Data,
+    func setGIFTextHeader(data: Data,
                                      refreshText: RefreshText = headerText,
                                      height: CGFloat = 60,
                                      action: @escaping () -> Void) {
@@ -100,23 +100,23 @@ public extension UIScrollView {
     /// Update the presentation in 'didUpdateState(_:)' and 'didUpdateProgress(_:)' methods
     ///
     /// - Parameter header: your custom header inherited from RefreshView
-    public func setCustomHeader(_ header: RefreshView) {
+    func setCustomHeader(_ header: RefreshView) {
         self.header = header
     }
 
     /// Begin refreshing with header
-    public func beginRefreshing() {
+    func beginRefreshing() {
         header?.beginRefreshing()
     }
 
     /// End refreshing with both header and footer
-    public func endRefreshing() {
+    func endRefreshing() {
         header?.endRefreshing()
         footer?.endRefreshing()
     }
 
     /// End refreshing with footer and remove it
-    public func endRefreshingWithNoMoreData() {
+    func endRefreshingWithNoMoreData() {
         tempFooter = footer
         footer?.endRefreshing { [weak self] in
             self?.footer = nil
@@ -124,7 +124,7 @@ public extension UIScrollView {
     }
 
     /// Reset footer which is set to no more data
-    public func resetNoMoreData() {
+    func resetNoMoreData() {
         if footer == nil {
             footer = tempFooter
         }
@@ -135,7 +135,7 @@ public extension UIScrollView {
     /// - Parameters:
     ///   - height: refresh view height and also the trigger requirement, default is 60
     ///   - action: refresh action
-    public func setIndicatorFooter(height: CGFloat = 60,
+    func setIndicatorFooter(height: CGFloat = 60,
                                        action: @escaping () -> Void) {
         footer = IndicatorView(isHeader: false, height: height, action: action)
     }
@@ -146,7 +146,7 @@ public extension UIScrollView {
     ///   - refreshText: text display for different states
     ///   - height: refresh view height and also the trigger requirement, default is 60
     ///   - action: refresh action
-    public func setTextFooter(refreshText: RefreshText = footerText,
+    func setTextFooter(refreshText: RefreshText = footerText,
                                   height: CGFloat = 60,
                                   action: @escaping () -> Void) {
         footer = TextView(isHeader: false, refreshText: refreshText, height: height, action: action)
@@ -157,7 +157,7 @@ public extension UIScrollView {
     /// - Parameters:
     ///   - height: refresh view height, default is 60
     ///   - action: refresh action
-    public func setIndicatorAutoFooter(height: CGFloat = 60,
+    func setIndicatorAutoFooter(height: CGFloat = 60,
                                            action: @escaping () -> Void) {
         footer = IndicatorAutoFooter(height: height, action: action)
     }
@@ -168,7 +168,7 @@ public extension UIScrollView {
     ///   - loadingText: text display for refreshing
     ///   - height: refresh view height, default is 60
     ///   - action: refresh action
-    public func setTextAutoFooter(loadingText: String = loadingText,
+    func setTextAutoFooter(loadingText: String = loadingText,
                                       height: CGFloat = 60,
                                       action: @escaping () -> Void) {
         footer = TextAutoFooter(loadingText: loadingText, height: height, action: action)
@@ -179,7 +179,7 @@ public extension UIScrollView {
     /// Update the presentation in 'didUpdateState(_:)' and 'didUpdateProgress(_:)' methods
     ///
     /// - Parameter footer: your custom footer inherited from RefreshView
-    public func setCustomFooter(_ footer: RefreshView) {
+    func setCustomFooter(_ footer: RefreshView) {
         self.footer = footer
     }
 }
@@ -194,8 +194,7 @@ public enum RefresherType {
 
 public extension UIScrollView {
     
-    
-    public func setLoadMoreFooter(_ type: RefresherType, height h: CGFloat = 60, action a: @escaping () -> Void) {
+    func setLoadMoreFooter(_ type: RefresherType, height h: CGFloat = 60, action a: @escaping () -> Void) {
         switch type {
         case .indicator:
             self.setIndicatorFooter(height: h, action: a)
@@ -214,7 +213,7 @@ public extension UIScrollView {
         }
     }
     
-    public func setRefreshHeader(_ type: RefresherType, height h: CGFloat, action a: @escaping () -> Void) {
+    func setRefreshHeader(_ type: RefresherType, height h: CGFloat, action a: @escaping () -> Void) {
         switch type {
         case .indicator:
             self.setIndicatorHeader(height: h, action: a)

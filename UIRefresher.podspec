@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "UIRefresher"
-  s.version          = "1.0.0"
+  s.version          = "1.1.0"
   s.summary          = "Pull to refresh & pull to load more view for iOS."
   s.description      = <<-DESC
                         UIRefresher is a pull to refresh & pull to load more view for iOS..
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.author           = { "Meniny" => "Meniny@qq.com" }
   s.source           = { :git => "https://github.com/Meniny/UIRefresher.git", :tag => s.version.to_s }
   s.social_media_url = 'https://meniny.cn/'
-  s.swift_version    = "4.0"
+  s.swift_version    = "5.0"
 
   s.ios.deployment_target = '8.0'
 

@@ -14,7 +14,7 @@ public enum RefreshViewStyle {
 }
 
 open class RefreshView: UIView {
-    open let style: RefreshViewStyle
+    public let style: RefreshViewStyle
     open var height: CGFloat
     open var action: () -> Void
 
